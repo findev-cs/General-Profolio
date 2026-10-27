@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive fictional contact-record data entry and validation work sample by Bill J.">
+    <title>Record Entry Demo | Bill J.</title>
+    <link rel="stylesheet" href="stylesheets.css">
+    <script src="demo.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">Bill J<span>.</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#work">Work sample</a>
+            <a href="index.html#approach">My approach</a>
+        </nav>
+    </header>
+
+    <main class="demo-main">
+        <a class="back-link" href="index.html#work">← Back to portfolio</a>
+        <section class="demo-intro">
+            <p class="eyebrow">INTERACTIVE WORK SAMPLE</p>
+            <h1>Contact record entry</h1>
+            <p>Enter a fictional sample record, check it, then review it in the table. Required fields and email format are validated in your browser.</p>
+        </section>
+
+        <div class="demo-notice" role="note">
+            <strong>Privacy note</strong>
+            <p>This is a front-end demonstration only. Do not enter real personal information. Nothing is sent to a server or saved; added rows disappear when you reload this page.</p>
+        </div>
+
+        <section class="demo-panel" aria-labelledby="entry-heading">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">STEP 1 · ENTER</p>
+                    <h2 id="entry-heading">New record</h2>
+                </div>
+                <span class="required-note"><span aria-hidden="true">*</span> Required</span>
+            </div>
+            <form id="record-form">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="full-name">Full name <span aria-hidden="true">*</span></label>
+                        <input id="full-name" name="fullName" type="text" autocomplete="off" maxlength="80" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email address <span aria-hidden="true">*</span></label>
+                        <input id="email" name="email" type="email" autocomplete="off" maxlength="120" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="record-date">Date received <span aria-hidden="true">*</span></label>
+                        <input id="record-date" name="recordDate" type="date" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="record-status">Record status <span aria-hidden="true">*</span></label>
+                        <select id="record-status" name="status" required>
+                            <option value="">Select a status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In review">In review</option>
+                            <option value="Complete">Complete</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Validate &amp; add record</button>
+                    <button class="button button-secondary" type="reset">Clear form</button>
+                </div>
+                <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="demo-panel records-panel" aria-labelledby="records-heading">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">STEP 2 · REVIEW</p>
+                    <h2 id="records-heading">Sample records <span class="record-count" id="record-count">(3)</span></h2>
+                </div>
+                <span class="table-caption">Fictional data</span>
+            </div>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Sample contact records table">
+                <table>
+                    <caption class="visually-hidden">Fictional contact records for reviewing the data-entry sample.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Full name</th>
+                            <th scope="col">Email address</th>
+                            <th scope="col">Date received</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-body">
+                        <tr>
+                            <td>Alex Morgan</td>
+                            <td>alex.morgan@example.com</td>
+                            <td>2026-03-12</td>
+                            <td><span class="status status-complete">Complete</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jamie Taylor</td>
+                            <td>jamie.taylor@example.com</td>
+                            <td>2026-03-14</td>
+                            <td><span class="status status-review">In review</span></td>
+                        </tr>
+                        <tr>
+                            <td>Riley Jordan</td>
+                            <td>riley.jordan@example.com</td>
+                            <td>2026-03-16</td>
+                            <td><span class="status status-pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Bill J. <span>·</span> Data Entry Portfolio</p>
+        <a href="index.html">Return to portfolio</a>
+    </footer>
+</body>
+</html>
